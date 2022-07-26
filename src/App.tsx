@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import NewTodo from './components/NewTodo';
 import Todos from './components/Todos';
+import Todo from './models/todo';
+import TodosContextProvider from './store/todosContext';
 
 function App() {
+  
+
   return (
-    <div>
-      <Todos items={['Learn JS', 'Learn TS']} />
-    </div>
+    <TodosContextProvider>
+        <NewTodo/>
+        <Todos />
+    </TodosContextProvider>
   );
 }
 
